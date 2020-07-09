@@ -1,0 +1,13 @@
+<a href='/tweets/new'><button>Create a new tweet</button></a>
+
+<h2>Tweets</h2>
+<% @tweets.each do |t| %>
+  <li><%= t.content %> by <strong><%= t.user.username %></strong>
+  <p> Tweeted: <%= t.created_at.strftime("%m/%d/%Y at %I:%M%p") %></p>
+  </li>
+<% end %>
+
+<h2>Users</h2>
+<% @users.each do |u| %>
+  <li><a href='/users/<%= u.slug %>'><%= u.username%></a></li>
+<% end %>

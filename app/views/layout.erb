@@ -7,9 +7,15 @@
 
     <div class="container">
       <h1>Welcome to Fwitter!</h1>
-      <h2>This is located in layout.erb!</h2>
-      <h2>Don't forget to <strong>yield</strong> your views!</h2>
     </div>
+    <% if logged_in? %>
+      <h2>Welcome, <%= current_user.username %></h2>
+      <form class="logout" action="/logout" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button type="submit">Log Out</button><br><br>
+      </form>
+    <% end %>
 
+    <%= yield %>
   </body>
 </html>

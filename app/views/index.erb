@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <a href='/tweets/new'><button>Create a new tweet</button></a>
+  <h3>or</h3>
+  <a href='/tweets'><button>See all Tweets</button></a>
+<% else %>
+  <h3>Please</h3>
+  <a href='/login'><button>Log In</button></a>
+  <h3>or</h3>
+  <a href='/signup'><button>Sign Up</button></a>
+<% end %>

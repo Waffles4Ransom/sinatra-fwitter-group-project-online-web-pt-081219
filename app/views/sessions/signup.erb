@@ -1,0 +1,20 @@
+<form action="/signup" method="POST">
+<h2>Sign up to join Fwitter!</h2>
+
+ <% if @user && @user.errors %>
+    <% @user.errors.full_messages.each do |e|%>
+      <p><%= e %></p>
+      <% end %>
+<% end %>
+
+ <label for="email"> Email:</label><br>
+    <input type="text" name="email" id="email" required><br>
+
+    <label for="username"> User Name:</label><br>
+    <input type="text" name="username" id="username" ><br>
+  
+    <label for="password"> Password:</label><br>
+    <input type="password" name="password" id="password" required><br><br>
+  
+  <input class="button" type="submit" value="Sign Up">
+</form>

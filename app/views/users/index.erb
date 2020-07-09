@@ -1,0 +1,5 @@
+<h1> Fwitter Users</h1>
+
+<% @users.each do |u| %>
+  <li><a href='/users/<%= u.slug %>'><%= u.username %></a></li>
+<% end %>
